@@ -1,20 +1,77 @@
-// projectsort.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <Windows.h>
+#include <string>
+#include "ArrayList.cpp"
+#include "List.cpp""
+#include "BiblList.cpp""
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+string stateM;
+void MainMenu() {
+	cout << "    МЕНЮ\n"
+		<< "(0) Вихід з програми\n"
+		<< "(1) На основі масиву\n"
+		<< "(2) На основі зв'язного списку\n"
+		<< "(3) На основі вектору\n"
+		<< "Ваш вибір: ";
+	cin >> stateM;
+};
+
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	ArrayList Arlst;
+	List<int> lst;
+	VectorList Veclst;
+
+	system("pause");
+	system("cls");
+	MainMenu();
+
+	while (stateM != "0") {
+
+		if (stateM == "1") {
+			system("cls");
+
+			Arlst.MainFunc();
+
+			system("pause");
+			system("cls");
+			MainMenu();
+			system("cls");
+		}
+		if (stateM == "2") {
+			system("cls");
+
+			lst.MainFunc();
+
+			system("pause");
+			system("cls");
+			MainMenu();
+			system("cls");
+		}
+		if (stateM == "3") {
+			system("cls");
+
+			Veclst.MainFunc();
+
+			system("pause");
+			system("cls");
+			MainMenu();
+			system("cls");
+		}
+		if (stateM != "0" && stateM != "1" && stateM != "2" && stateM != "3") {
+			system("cls");
+
+			cout << "********************************************************\n"
+				<< "Такого варіанту нема. Введіть варіант із запропонованих.\n"
+				<< "********************************************************\n";
+
+			system("pause");
+			system("cls");
+			MainMenu();
+			system("cls");
+		}
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
