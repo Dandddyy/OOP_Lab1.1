@@ -30,7 +30,7 @@ int main() {
 	MainMenu();
 
 	while (stateM != "0") {
-
+		
 		if (stateM == "1") {
 			system("cls");
 
